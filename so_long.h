@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/19 16:56:06 by jlebre           ###   ########.fr       */
+/*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
+/*   Updated: 2022/05/19 17:52:42 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-void	error(char *err, char **map)
-{
-	ft_printf(err);
-	free (map);
-	exit(1);
-}
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <mlx.h>
+# include <fcntl.h>
+# include "get_next_line/get_next_line.h"
+# include "printf/ft_printf.h"
+# include "libft/libft.h"
 
-int	main(int argc, char *argv)
-{
-	if ((ft_strchr(argv, ".ber") == 1))
-	{
-		check(argv);
-	}
-	return (0);
-}
+//ERROR
+void	error(char *err, char **map);
 
-//argv - map.ber
+//MAP DIMENSIONS
+int		map_width(char **map);
+int		map_height(char **map);
+
+//CHECK MAP WALLS
+void	check(char **map);
+
+#endif

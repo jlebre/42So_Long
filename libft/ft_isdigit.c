@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/19 16:56:06 by jlebre           ###   ########.fr       */
+/*   Created: 2021/10/19 18:20:05 by jlebre            #+#    #+#             */
+/*   Updated: 2021/11/15 18:15:15 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "libft.h"
 
-void	error(char *err, char **map)
+int	ft_isdigit(int i)
 {
-	ft_printf(err);
-	free (map);
-	exit(1);
+	if ((i > 47) && (i < 58))
+		return (1);
+	else
+		return (0);
 }
-
-int	main(int argc, char *argv)
-{
-	if ((ft_strchr(argv, ".ber") == 1))
-	{
-		check(argv);
-	}
-	return (0);
-}
-
-//argv - map.ber

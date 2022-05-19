@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_dimensions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/19 16:56:06 by jlebre           ###   ########.fr       */
+/*   Created: 2022/05/19 17:07:39 by jlebre            #+#    #+#             */
+/*   Updated: 2022/05/19 17:14:17 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "so_long.h"
 
-void	error(char *err, char **map)
+int	map_width(char **map)
 {
-	ft_printf(err);
-	free (map);
-	exit(1);
+	int	i;
+
+	i = 0;
+	while (map[0][i])
+		i++;
+	return (i);
 }
 
-int	main(int argc, char *argv)
+int	map_height(char **map)
 {
-	if ((ft_strchr(argv, ".ber") == 1))
-	{
-		check(argv);
-	}
-	return (0);
-}
+	int	j;
 
-//argv - map.ber
+	j = 0;
+	while (map[j])
+		j++;
+	return (j);
+}

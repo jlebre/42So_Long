@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/19 16:56:06 by jlebre           ###   ########.fr       */
+/*   Created: 2021/12/13 13:27:10 by jlebre            #+#    #+#             */
+/*   Updated: 2021/12/13 13:28:06 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "libft.h"
 
-void	error(char *err, char **map)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	ft_printf(err);
-	free (map);
-	exit(1);
-}
+	int	i;
 
-int	main(int argc, char *argv)
-{
-	if ((ft_strchr(argv, ".ber") == 1))
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		check(argv);
+		(f(i, &s[i]));
+		i++;
 	}
-	return (0);
 }
-
-//argv - map.ber

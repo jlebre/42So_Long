@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/19 16:56:06 by jlebre           ###   ########.fr       */
+/*   Created: 2021/10/19 19:12:56 by jlebre            #+#    #+#             */
+/*   Updated: 2021/11/15 18:12:03 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "libft.h"
 
-void	error(char *err, char **map)
+size_t	ft_strlen(const char *str)
 {
-	ft_printf(err);
-	free (map);
-	exit(1);
-}
+	size_t	i;
 
-int	main(int argc, char *argv)
-{
-	if ((ft_strchr(argv, ".ber") == 1))
-	{
-		check(argv);
-	}
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return ((int)i);
 }
-
-//argv - map.ber

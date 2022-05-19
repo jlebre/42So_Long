@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/19 16:56:06 by jlebre           ###   ########.fr       */
+/*   Created: 2021/10/19 19:41:40 by jlebre            #+#    #+#             */
+/*   Updated: 2021/11/16 17:37:29 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "libft.h"
 
-void	error(char *err, char **map)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	ft_printf(err);
-	free (map);
-	exit(1);
-}
+	size_t	i;
 
-int	main(int argc, char *argv)
-{
-	if ((ft_strchr(argv, ".ber") == 1))
+	i = 0;
+	if (size > 0)
 	{
-		check(argv);
+		while ((src[i] != '\0') && (i < (size - 1)))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (0);
+	return (ft_strlen(src));
 }
-
-//argv - map.ber

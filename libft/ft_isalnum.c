@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/19 16:56:06 by jlebre           ###   ########.fr       */
+/*   Created: 2021/10/19 18:22:09 by jlebre            #+#    #+#             */
+/*   Updated: 2021/11/15 16:19:12 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "libft.h"
 
-void	error(char *err, char **map)
+int	ft_isalnum(int i)
 {
-	ft_printf(err);
-	free (map);
-	exit(1);
+	if ((i > 47 && i < 58) || ((i > 64) && (i < 91)) || ((i > 96) && (i < 123)))
+		return (1);
+	else
+		return (0);
 }
-
-int	main(int argc, char *argv)
-{
-	if ((ft_strchr(argv, ".ber") == 1))
-	{
-		check(argv);
-	}
-	return (0);
-}
-
-//argv - map.ber
