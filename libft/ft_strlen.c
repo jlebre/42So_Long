@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/03 18:34:22 by jlebre           ###   ########.fr       */
+/*   Created: 2021/10/19 19:12:56 by jlebre            #+#    #+#             */
+/*   Updated: 2022/06/03 17:21:05 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-void	ft_error(char *err, char **map)
+int	ft_strlen(const char *str)
 {
-	ft_printf("\033[0;31m%s\033[0m", err);
-	free (map);
-	exit(1);
-}
+	int	i;
 
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-	{
-		check(&argv[1]);
-	}
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return ((int)i);
 }
-
-//argv - map.ber

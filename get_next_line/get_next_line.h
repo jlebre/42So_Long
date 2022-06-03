@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/03 18:34:22 by jlebre           ###   ########.fr       */
+/*   Created: 2022/04/25 17:22:49 by jlebre            #+#    #+#             */
+/*   Updated: 2022/04/25 18:40:11 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	ft_error(char *err, char **map)
-{
-	ft_printf("\033[0;31m%s\033[0m", err);
-	free (map);
-	exit(1);
-}
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
 
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-	{
-		check(&argv[1]);
-	}
-	return (0);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-//argv - map.ber
+char	*get_next_line(int fd);
+char	*get_line(char *line, char *buf);
+int		check(char *buf);
+
+#endif
