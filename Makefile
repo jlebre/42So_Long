@@ -3,47 +3,51 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 16:32:14 by jlebre            #+#    #+#              #
-#    Updated: 2022/06/03 18:33:56 by jlebre           ###   ########.fr        #
+#    Updated: 2022/06/07 18:52:02 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-MLXFLAGS =  -lmlx -framework OpenGL -framework AppKit
+MLXFLAGS_MAC =  -lmlx -framework OpenGL -framework AppKit
+MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 RM = @rm -fr
 NAME = so_long
-SRCS = so_long.c check_map.c check_map_walls.c colors.c
+SRCS = so_long.c check_map.c map_dimensions.c check_map_walls.c colors.c
 OBJS = $(SRCS:.c=.o)
 
-LIBFT = libft.a
+HEADER = so_long.h libft/libft.h
+
+LIBFT = libft/libft.a
 LIBFT_PATH = libft
 LIB = .
 
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(OBJS) $(LIBFT) -I$(LIB) -I$(LIBFT_PATH) -Imlx $(MLXFLAGS) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT) $(HEADER)
+#$(CC) $(OBJS) $(LIBFT) -I$(LIB) -I$(LIBFT_PATH) -Imlx $(MLXFLAGS_MAC) -o $(NAME)
+	$(CC) $(OBJS) $(LIBFT) -I$(LIB) -I$(LIBFT_PATH) $(MLXFLAGS_LINUX) -o $(NAME)
 	@echo "\033[0;32mSo_long Compiled!\033[0m"
 
 $(LIBFT):
-#make -f libft/Makefile -s
-	@make -C $(LIBFT_PATH)
-	
+	@$(MAKE) -C $(LIBFT_PATH)
+	 
 .c.o:
-	@$(CC) $(FLAGS) -I$(LIB) -I$(LIBFT_PATH) -Imlx -c $< -o $@
+#@$(CC) $(FLAGS) -I$(LIB) -I$(LIBFT_PATH) -Imlx -c $< -o $@
+	@$(CC) $(FLAGS) -I$(LIB) -I$(LIBFT_PATH) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
-	@make clean -C $(LIBFT_PATH)
+	@$(MAKE) clean -C $(LIBFT_PATH)
 	@echo "\033[0;31m.o Files Removed!\033[0m"
 	
 fclean: clean
-	$(RM) $(NAME)
-	@make fclean -C $(LIBFT_PATH)
+	$(RM) $(NAME) 
+	@$(MAKE) fclean -C $(LIBFT_PATH)
 	@echo "\033[0;31mSo_long Removed!\033[0m"
 
 re: fclean all

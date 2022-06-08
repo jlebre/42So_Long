@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/03 18:34:15 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/07 18:12:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <mlx.h>
 # include <fcntl.h>
-# include "libft/libft.h"
+# include "/home/jlebre/so_long/libft/libft.h"
 
 //ERROR
 void	ft_error(char *err, char **map);
@@ -29,6 +29,9 @@ int		map_height(char **map);
 
 //CHECK MAP WALLS
 void	check(char **map);
+int	    check_first_line(char **map);
+int	    check_sides(char **map);
+int 	check_last_line(char **map);
 
 //COLORS
 int		ft_red(char *str);
