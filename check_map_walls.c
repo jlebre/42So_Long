@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_walls.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:12:18 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/07 18:57:59 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/09 15:49:06 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 int	check_first_line(char **map)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (map[i][j] != '\n')
+	while (map[0][i] != '\n')
 	{
-		if (map[i][j] != '1')
-			ft_error("The top wall is not correct\n", map);
-		j++;
+		if (map[0][i] != '1')
+			ft_error("The top wall is not correct\n");
+		i++;
 	}
 	return (0);
 }
@@ -40,11 +38,11 @@ int	check_sides(char **map)
 	while (i < j)
 	{
 		if (ft_strlen(map[i]) > k)
-			ft_error("Line is too long\n", map);
+			ft_error("Line is too long\n");
 		if (map[i][0] != '1')
-			ft_error("The left wall is not correct\n", map);
+			ft_error("The left wall is not correct\n");
 		if (map[i][k] != '1')
-			ft_error("The right wall is not correct\n", map);
+			ft_error("The right wall is not correct\n");
 		i++;
 	}
 	return (0);
@@ -60,9 +58,9 @@ int	check_last_line(char **map)
 	while (map[i][j] != '\n')
 	{
 		if (ft_strlen(map[i]) > map_width(map))
-			ft_error("Line is too long\n", map);
+			ft_error("Line is too long\n");
 		if (map[i][j] != '1')
-			ft_error("The bottom wall is not correct\n", map);
+			ft_error("The bottom wall is not correct\n");
 		j++;
 	}
 	return (0);

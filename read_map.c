@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 14:03:52 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/09 15:46:32 by jlebre           ###   ########.fr       */
+/*   Created: 2022/06/09 17:56:13 by jlebre            #+#    #+#             */
+/*   Updated: 2022/06/09 18:05:39 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	*check_map(char *map)
+void	read_map(char *file, t_game *game)
 {
-	int	fd;
-	int	size;
+	int		fd;
+	char	*line;
 
-	size = ft_strlen(map);
-	fd = open(map, O_DIRECTORY);
-	if (fd >= 0)
-		ft_error("Argv[1] is not a directory!");
-	fd = open(map, O_RDONLY);
-	if (fd < 0)
-		ft_error("Argv[1] did not opened!");
-	if (!ft_strnstr(map, ".ber", 5))
-		ft_red(".ber File Required");
-	close (fd);
+	fd = open(file, O_RDONLY);
+	line = get_next_line(fd);
+	game->height = 0;
+	game->width = ft_strlen(line) - 1;
+	game->str_line = ft
 }
