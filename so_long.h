@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/09 17:22:52 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/09 19:18:32 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,19 @@ typedef struct s_param
 	int	y;
 }	t_param;
 
+typedef struct s_game
+{
+	int		height;
+	int		width;
+	char	*str_line;
+	void	*mlx;
+	void	*mlx_win;
+	void	*background;
+	void	*bill;
+	void	*pato;
+	void	*safe;
+}	t_game;
+
 //ERROR
 void	ft_error(char *err);
 
@@ -46,7 +59,9 @@ int		map_height(char **map);
 void	check(char **map);
 
 //CREATE MAP
-void	create_map(char **map);
+void	check_map(char *map);
+void	read_map(char *file, t_game *game);
+void	print_map(t_game game);
 
 //COLORS
 int		ft_red(char *str);
