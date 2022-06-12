@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/09 19:18:32 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/12 16:13:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct s_game
 {
 	int		height;
 	int		width;
+	int		counter;
+	int		col_count;
 	char	*str_line;
 	void	*mlx;
 	void	*mlx_win;
@@ -45,6 +47,7 @@ typedef struct s_game
 	void	*bill;
 	void	*pato;
 	void	*safe;
+	void	*wall;
 }	t_game;
 
 //ERROR
@@ -62,6 +65,13 @@ void	check(char **map);
 void	check_map(char *map);
 void	read_map(char *file, t_game *game);
 void	print_map(t_game game);
+
+//KEY PRESS
+int	key_press(int keycode, t_game *game);
+void    move_w(t_game *game);
+void    move_a(t_game *game);
+void    move_d(t_game *game);
+void    move_s(t_game *game);
 
 //COLORS
 int		ft_red(char *str);

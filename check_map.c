@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:52 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/09 19:15:54 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/11 18:36:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	check_map(char *map)
 {
 	int	fd;
-	int	size;
-
-	size = ft_strlen(map);
+	
 	fd = open(map, O_DIRECTORY);
 	if (fd >= 0)
 		ft_error("Argv[1] is not a directory!");

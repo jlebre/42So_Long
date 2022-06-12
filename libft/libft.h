@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:33:21 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/03 17:23:30 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/12 14:31:25 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,10 @@ int		ft_putnbr_base_fd(unsigned int n, char *base, int k, int fd);
 int		ft_putnbr_p_fd(unsigned long n, char *base, int k, int fd);
 int		ft_putpointer_fd(unsigned long ptr, int fd);
 int		ft_unsigned(unsigned int nb, int fd);
+
+//
+char	*ft_strjoin_without_newline(char const *s1, char const *s2);
+char	*ft_strdup_without_newline(const char *str);
+char    *ft_remove_newline(char *str);
 
 #endif

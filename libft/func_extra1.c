@@ -57,7 +57,7 @@ int	ft_unsigned(unsigned int nb, int fd)
 	int	count;
 
 	count = 0;
-	if (nb >= 0 && nb < 10)
+	if (nb < 10)
 	{
 		nb += '0';
 		count += ft_putchar_fd_pf(nb, 1);
