@@ -24,115 +24,123 @@ int	key_press(int keycode, t_game *game)
 		move_s(game);
 	else if (keycode == KEY_ESC)
 		exit (0);
+	ft_printf("Colectibles: %d\n", game->col_count);
 	return (0);
 }
 
-void    move_w(t_game *game)
+void	move_w(t_game *game)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < ft_strlen(game->str_line))
-    {
-        if (game->str_line[i] == 'P')
-            break;
-        i++;
-    }
-    if (game->str_line[i - game->width] == 'C')
-        game->col_count++;
-    if (game->str_line[i - game->width] == 'E' && game->width == game->col_count)
-        ft_printf("Clear_game");
-        //clear_game(game);
-    else if (game->str_line[i - game->width] != '1' && game->str_line[i - game->width] != 'E')
-    {
-        game->str_line[i] = '0';
-        game->str_line[i - game->width] = 'P';
-        game->counter++;
-        ft_printf("%d\n", game->counter);
-        //print_map(*game);
-    }
+	i = 0;
+	while (i < ft_strlen(game->str_line))
+	{
+		if (game->str_line[i] == 'P')
+			break ;
+		i++;
+	}
+	if (game->str_line[i - game->width] == 'C')
+			game->col_count++;
+	if (game->str_line[i - game->width] == 'E'
+		&& game->width == game->col_count)
+		ft_printf("Clear_game!\n");
+		//clear_game(game);
+	else if (game->str_line[i - game->width] != '1'
+		&& game->str_line[i - game->width] != 'E')
+	{
+		game->str_line[i] = '0';
+		game->str_line[i - game->width] = 'P';
+		game->counter++;
+		ft_printf("%d\n", game->counter);
+		print_map(*game);
+	}
 }
 
 /*
     Enquanto i for inferior ao tamanho da linha i++;
     O valor de i, vai ser igual ao da Width;
-
 */
 
-void    move_a(t_game *game)
+void	move_a(t_game *game)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < ft_strlen(game->str_line))
-    {
-        if (game->str_line[i] == 'P')
-            break;
-        i++;
-    }
-    if (game->str_line[i - game->width] == 'C')
-        game->col_count++;
-    if (game->str_line[i - game->width] == 'E' && game->width == game->col_count)
-        ft_printf("Clear_game");
-        //clear_game(game);
-    else if (game->str_line[i - game->width] != '1' && game->str_line[i - game->width] != 'E')
-    {
-        game->str_line[i] = '0';
-        game->str_line[i - game->width] = 'P';
-        game->counter++;
-        ft_printf("%d\n", game->counter);
-        //print_map(game);
-    }
+	i = 0;
+	while (i < ft_strlen(game->str_line))
+	{
+		if (game->str_line[i] == 'P')
+			break ;
+		i++;
+	}
+	if (game->str_line[i - 1] == 'C')
+			game->col_count++;
+	if (game->str_line[i - 1] == 'E'
+		&& game->width == game->col_count)
+		ft_printf("Clear_game");
+		//clear_game(game);
+	else if (game->str_line[i - 1] != '1'
+		&& game->str_line[i - 1] != 'E')
+	{
+		game->str_line[i] = '0';
+		game->str_line[i - 1] = 'P';
+		game->counter++;
+		ft_printf("%d\n", game->counter);
+		print_map(*game);
+	}
 }
 
-void    move_d(t_game *game)
+void	move_d(t_game *game)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < ft_strlen(game->str_line))
-    {
-        if (game->str_line[i] == 'P')
-            break;
-        i++;
-    }
-    if (game->str_line[i - game->width] == 'C')
-        game->col_count++;
-    if (game->str_line[i - game->width] == 'E' && game->width == game->col_count)
-        ft_printf("Clear_game");
-        //clear_game(game);
-    else if (game->str_line[i - game->width] != '1' && game->str_line[i - game->width] != 'E')
-    {
-        game->str_line[i] = '0';
-        game->str_line[i - game->width] = 'P';
-        game->counter++;
-        ft_printf("%d\n", game->counter);
-        //print_map(game);
-    }
+	i = 0;
+	while (i < ft_strlen(game->str_line))
+	{
+		if (game->str_line[i] == 'P')
+			break ;
+		i++;
+	}
+	if (game->str_line[i + game->width] == 'C')
+			game->col_count++;
+	if (game->str_line[i + game->width] == 'E'
+		&& game->width == game->col_count)
+		ft_printf("Clear_game");
+		//clear_game(game);
+	else if (game->str_line[i + game->width] != '1'
+		&& game->str_line[i + game->width] != 'E')
+	{
+		game->str_line[i] = '0';
+		game->str_line[i + game->width] = 'P';
+		game->counter++;
+		ft_printf("%d\n", game->counter);
+		print_map(*game);
+	}
 }
 
-void    move_s(t_game *game)
+void	move_s(t_game *game)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < ft_strlen(game->str_line))
-    {
-        if (game->str_line[i] == 'P')
-            break;
-        i++;
-    }
-    if (game->str_line[i - game->width] == 'C')
-        game->col_count++;
-    if (game->str_line[i - game->width] == 'E' && game->width == game->col_count)
-        ft_printf("Clear_game");
-        //clear_game(game);
-    else if (game->str_line[i - game->width] != '1' && game->str_line[i - game->width] != 'E')
-    {
-        game->str_line[i] = '0';
-        game->str_line[i - game->width] = 'P';
-        game->counter++;
-        ft_printf("%d\n", game->counter);
-        //print_map(game);
-    }
+	i = 0;
+	while (i < ft_strlen(game->str_line))
+	{
+		if (game->str_line[i] == 'P')
+			break ;
+		i++;
+	}
+	if (game->str_line[i + 1] == 'C')
+			game->col_count++;
+	if (game->str_line[i + 1] == 'E'
+		&& game->width == game->col_count)
+		ft_printf("Clear_game");
+		//clear_game(game);
+	else if (game->str_line[i + 1] != '1'
+		&& game->str_line[i + 1] != 'E')
+	{
+		game->str_line[i] = '0';
+		game->str_line[i + 1] = 'P';
+		game->counter++;
+		ft_printf("%d\n", game->counter);
+		print_map(*game);
+	}
 }
