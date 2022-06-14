@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/12 16:13:14 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/14 21:59:37 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_game
 	int		width;
 	int		counter;
 	int		col_count;
+	int		colectibles;
 	char	*str_line;
 	void	*mlx;
 	void	*mlx_win;
@@ -58,24 +59,32 @@ int		map_width(char **map);
 int		map_height(char **map);
 
 //CHECK MAP WALLS
-//void	*check_map(char *map);
+void	check_map(t_game *game);
 void	check(char **map);
 
 //CREATE MAP
-void	check_map(char *map);
 void	read_map(char *file, t_game *game);
 void	print_map(t_game game);
+void	background(t_game game, int wid, int hei);
+void	wall(t_game game, int wid, int hei);
+void	bill(t_game game, int wid, int hei);
+void	player(t_game game, int wid, int hei);
+void	safe(t_game game, int wid, int hei);
+void	print_map_utils(t_game game);
 
 //KEY PRESS
-int	key_press(int keycode, t_game *game);
-void    move_w(t_game *game);
-void    move_a(t_game *game);
-void    move_d(t_game *game);
-void    move_s(t_game *game);
+int		key_press(int keycode, t_game *game);
+void	move_w(t_game *game);
+void	move_a(t_game *game);
+void	move_d(t_game *game);
+void	move_s(t_game *game);
 
 //COLORS
 int		ft_red(char *str);
 int		ft_green(char *str);
 int		ft_yellow(char *str);
+
+//VICTORY
+void	victory(void);
 
 #endif

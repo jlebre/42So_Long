@@ -14,10 +14,10 @@
 
 char	*ft_strdup_without_newline(const char *str)
 {
-    char    *strwnl;
-    char    *new_str;
-	
-    strwnl = ft_remove_newline((char *)str);
-    new_str = ft_strdup(strwnl);
+	char	*strwnl;
+	char	*new_str;
+
+	strwnl = ft_remove_newline((char *)str);
+	new_str = ft_strdup(strwnl);
 	return (new_str);
 }

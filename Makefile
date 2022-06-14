@@ -6,7 +6,7 @@
 #    By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 16:32:14 by jlebre            #+#    #+#              #
-#    Updated: 2022/06/14 16:17:11 by jlebre           ###   ########.fr        #
+#    Updated: 2022/06/14 21:58:22 by jlebre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ MLXFLAGS_MAC =  -lmlx -framework OpenGL -framework AppKit
 MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 RM = @rm -fr
 NAME = so_long
-SRCS = so_long.c map_dimensions.c check_map_walls.c colors.c read_map.c print_map.c check_map.c key.c
+SRCS = so_long.c map_dimensions.c check_map_walls.c colors.c read_map.c\
+	print_map.c check_map.c key.c victory.c ft_error.c print_map_utils.c
 OBJS = $(SRCS:.c=.o)
 
 HEADER = so_long.h libft/libft.h

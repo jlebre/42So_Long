@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:33:21 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/12 14:31:25 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/14 21:08:30 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,6 @@ int		ft_unsigned(unsigned int nb, int fd);
 //
 char	*ft_strjoin_without_newline(char const *s1, char const *s2);
 char	*ft_strdup_without_newline(const char *str);
-char    *ft_remove_newline(char *str);
+char	*ft_remove_newline(char *str);
 
 #endif

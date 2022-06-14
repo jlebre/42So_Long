@@ -24,7 +24,6 @@ int	key_press(int keycode, t_game *game)
 		move_s(game);
 	else if (keycode == KEY_ESC)
 		exit (0);
-	ft_printf("Colectibles: %d\n", game->col_count);
 	return (0);
 }
 
@@ -42,9 +41,8 @@ void	move_w(t_game *game)
 	if (game->str_line[i - game->width] == 'C')
 			game->col_count++;
 	if (game->str_line[i - game->width] == 'E'
-		&& game->width == game->col_count)
-		ft_printf("Clear_game!\n");
-		//clear_game(game);
+		&& game->col_count == game->colectibles)
+		victory();
 	else if (game->str_line[i - game->width] != '1'
 		&& game->str_line[i - game->width] != 'E')
 	{
@@ -55,11 +53,6 @@ void	move_w(t_game *game)
 		print_map(*game);
 	}
 }
-
-/*
-    Enquanto i for inferior ao tamanho da linha i++;
-    O valor de i, vai ser igual ao da Width;
-*/
 
 void	move_a(t_game *game)
 {
@@ -75,9 +68,8 @@ void	move_a(t_game *game)
 	if (game->str_line[i - 1] == 'C')
 			game->col_count++;
 	if (game->str_line[i - 1] == 'E'
-		&& game->width == game->col_count)
-		ft_printf("Clear_game");
-		//clear_game(game);
+		&& game->col_count == game->colectibles)
+		victory();
 	else if (game->str_line[i - 1] != '1'
 		&& game->str_line[i - 1] != 'E')
 	{
@@ -103,9 +95,8 @@ void	move_d(t_game *game)
 	if (game->str_line[i + game->width] == 'C')
 			game->col_count++;
 	if (game->str_line[i + game->width] == 'E'
-		&& game->width == game->col_count)
-		ft_printf("Clear_game");
-		//clear_game(game);
+		&& game->col_count == game->colectibles)
+		victory();
 	else if (game->str_line[i + game->width] != '1'
 		&& game->str_line[i + game->width] != 'E')
 	{
@@ -131,9 +122,8 @@ void	move_s(t_game *game)
 	if (game->str_line[i + 1] == 'C')
 			game->col_count++;
 	if (game->str_line[i + 1] == 'E'
-		&& game->width == game->col_count)
-		ft_printf("Clear_game");
-		//clear_game(game);
+		&& game->col_count == game->colectibles)
+		victory();
 	else if (game->str_line[i + 1] != '1'
 		&& game->str_line[i + 1] != 'E')
 	{
@@ -144,3 +134,7 @@ void	move_s(t_game *game)
 		print_map(*game);
 	}
 }
+
+/*
+O mapa é processado como uma linha
+*/

@@ -12,36 +12,44 @@
 
 #include "libft.h"
 
-char    *ft_remove_newline(char *str)
+int	counter(char *str)
 {
-    char    *new_str;
-    int     i;
-    int     j;
-    int     counter;
+	int	i;
+	int	counter;
 
-    i = 0;
-    j = 0;
-    counter = 0;
-    while (str[i++])
-    {
-        if (str[i] == '\n')
-            counter++;
-    }
-    i = 0;
-    new_str = malloc(sizeof(char) * (ft_strlen(str) - counter + 1));
-    while (str[i])
-    {
-        if (str[i] == '\n')
-            i++;
-        if (str[i] != '\0')
-        {
-        new_str[j] = str[i];
-        i++;
-        j++;
-        }
-    }
-     new_str[j] = '\0';
-    return (new_str);
+	i = 0;
+	counter = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			counter++;
+		i++;
+	}
+	return (counter);
+}
+
+char	*ft_remove_newline(char *str)
+{
+	char	*new_str;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	new_str = malloc(sizeof(char) * (ft_strlen(str) - counter(str) + 1));
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			i++;
+		if (str[i] != '\0')
+		{
+			new_str[j] = str[i];
+			i++;
+			j++;
+		}
+	}
+	new_str[j] = '\0';
+	return (new_str);
 }
 
 /*

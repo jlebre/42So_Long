@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:56:13 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/11 21:26:43 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/14 20:19:39 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	read_map(char *file, t_game *game)
 {
 	int		fd;
 	char	*line;
-	
+
 	fd = open(file, O_RDONLY);
 	line = get_next_line(fd);
 	game->height = 0;
