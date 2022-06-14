@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/14 21:59:37 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/14 22:50:43 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@
 # include "libft/libft.h"
 
 //CREATE A STRUCT TO DEFINE X AND Y AS PARAMETERS
-typedef struct s_param
-{
-	int	x;
-	int	y;
-}	t_param;
-
 typedef struct s_game
 {
 	int		height;
@@ -60,7 +54,7 @@ int		map_height(char **map);
 
 //CHECK MAP WALLS
 void	check_map(t_game *game);
-void	check(char **map);
+//void	check(t_game *game);
 
 //CREATE MAP
 void	read_map(char *file, t_game *game);
@@ -86,5 +80,8 @@ int		ft_yellow(char *str);
 
 //VICTORY
 void	victory(void);
+
+//EXIT
+//void	ft_exit(void);
 
 #endif

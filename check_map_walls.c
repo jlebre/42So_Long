@@ -6,39 +6,32 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:12:18 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/09 15:49:06 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/14 22:50:09 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_first_line(char **map)
+int	check_first_line(int i, t_game *game)
 {
-	int	i;
-
-	i = 0;
-	while (map[0][i] != '\n')
+	while (game->str_line[i] < game->width)
 	{
-		if (map[0][i] != '1')
+		if (game->str_line[i] != '1')
 			ft_error("The top wall is not correct\n");
 		i++;
 	}
-	return (0);
+	return (i);
 }
 
-int	check_sides(char **map)
+int	check_sides(int i, t_game *game)
 {
-	int	i;
 	int	j;
 	int	k;
 
-	i = 0;
 	j = map_height(map) - 1;
 	k = map_width(map);
-	while (i < j)
+	while (i < (game->height - 2) * game->width)
 	{
-		if (ft_strlen(map[i]) > k)
-			ft_error("Line is too long\n");
 		if (map[i][0] != '1')
 			ft_error("The left wall is not correct\n");
 		if (map[i][k] != '1')
@@ -48,7 +41,7 @@ int	check_sides(char **map)
 	return (0);
 }
 
-int	check_last_line(char **map)
+int	check_last_line(int i, t_game *game)
 {
 	int	i;
 	int	j;
@@ -66,9 +59,13 @@ int	check_last_line(char **map)
 	return (0);
 }
 
-void	check(char **map)
+void	check(t_game *game)
 {
-	check_first_line(map);
-	check_sides(map);
-	check_last_line(map);
+	int	i;
+
+	i = 0;
+	i = check_first_line(i, game);
+	i = check_sides(i, game);
+	i = check_last_line(i, game);
+	ft_green("Walls are correct\n");
 }
