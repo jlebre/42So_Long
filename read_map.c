@@ -22,14 +22,10 @@ void	check_map_name(char *map)
 	if (fd >= 0 && (len < 4 || map[len - 4] != '.' || map[len - 3] != 'b'
 		|| map[len - 2] != 'e' || map[len - 1] != 'r'))
 		ft_error(".ber File Required!\n");
-	else
-		ft_error("Map is not valid!\n");
 	fd = open(map, O_RDONLY);
 	if (fd < 0 && (len < 4 || map[len - 4] != '.' || map[len - 3] != 'b'
 		|| map[len - 2] != 'e' || map[len - 1] != 'r'))
 		ft_error(".ber File Required!\n");
-	else
-		ft_error("Map is not valid!\n");
 	if (len < 4 || map[len - 4] != '.' || map[len - 3] != 'b'
 		|| map[len - 2] != 'e' || map[len - 1] != 'r')
 		ft_error(".ber File Required!\n");
