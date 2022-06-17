@@ -41,7 +41,7 @@ void	move_w(t_game *game)
 	if (game->str_line[i - game->width] == 'C')
 			game->col_count++;
 	if (game->str_line[i - game->width] == 'E'
-		&& game->col_count == game->colectibles)
+		&& game->col_count == game->num_c)
 		victory();
 	else if (game->str_line[i - game->width] != '1'
 		&& game->str_line[i - game->width] != 'E')
@@ -68,7 +68,7 @@ void	move_a(t_game *game)
 	if (game->str_line[i - 1] == 'C')
 			game->col_count++;
 	if (game->str_line[i - 1] == 'E'
-		&& game->col_count == game->colectibles)
+		&& game->col_count == game->num_c)
 		victory();
 	else if (game->str_line[i - 1] != '1'
 		&& game->str_line[i - 1] != 'E')
@@ -95,7 +95,7 @@ void	move_d(t_game *game)
 	if (game->str_line[i + game->width] == 'C')
 			game->col_count++;
 	if (game->str_line[i + game->width] == 'E'
-		&& game->col_count == game->colectibles)
+		&& game->col_count == game->num_c)
 		victory();
 	else if (game->str_line[i + game->width] != '1'
 		&& game->str_line[i + game->width] != 'E')
@@ -122,7 +122,7 @@ void	move_s(t_game *game)
 	if (game->str_line[i + 1] == 'C')
 			game->col_count++;
 	if (game->str_line[i + 1] == 'E'
-		&& game->col_count == game->colectibles)
+		&& game->col_count == game->num_c)
 		victory();
 	else if (game->str_line[i + 1] != '1'
 		&& game->str_line[i + 1] != 'E')

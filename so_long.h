@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/14 22:50:43 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/18 00:08:00 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+//* 
+// MAC KEYS:
 # define X_EVENT_KEY_PRESS		2
 # define X_EVENT_KEY_RELEASE	3
 # define KEY_ESC				53
@@ -19,6 +22,18 @@
 # define KEY_A					0
 # define KEY_D					1
 # define KEY_S					2
+//*/
+
+/* 
+// LINUX KEYS:
+# define X_EVENT_KEY_PRESS		2
+# define X_EVENT_KEY_RELEASE	3
+# define KEY_ESC				27
+# define KEY_W					119
+# define KEY_A					97
+# define KEY_D					100
+# define KEY_S					115
+*/
 
 # include <stdlib.h>
 # include <stdio.h>
@@ -27,14 +42,15 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 
-//CREATE A STRUCT TO DEFINE X AND Y AS PARAMETERS
 typedef struct s_game
 {
 	int		height;
 	int		width;
 	int		counter;
 	int		col_count;
-	int		colectibles;
+	int		num_c;
+	int		num_e;
+	int		num_p;
 	char	*str_line;
 	void	*mlx;
 	void	*mlx_win;
@@ -53,8 +69,7 @@ int		map_width(char **map);
 int		map_height(char **map);
 
 //CHECK MAP WALLS
-void	check_map(t_game *game);
-//void	check(t_game *game);
+void	check(t_game *game);
 
 //CREATE MAP
 void	read_map(char *file, t_game *game);
@@ -82,6 +97,6 @@ int		ft_yellow(char *str);
 void	victory(void);
 
 //EXIT
-//void	ft_exit(void);
+int		ft_exit(t_game *game);
 
 #endif

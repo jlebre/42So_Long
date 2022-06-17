@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+         #
+#    By: admin <admin@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 16:32:14 by jlebre            #+#    #+#              #
-#    Updated: 2022/06/14 22:50:21 by jlebre           ###   ########.fr        #
+#    Updated: 2022/06/17 23:05:04 by admin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 RM = @rm -fr
 NAME = so_long
 SRCS = so_long.c colors.c read_map.c\
-	print_map.c check_map.c key.c utils.c print_map_utils.c #check_map_walls.c
+	print_map.c check_map.c key.c utils.c print_map_utils.c
 OBJS = $(SRCS:.c=.o)
 
 HEADER = so_long.h libft/libft.h
