@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:52 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/18 00:07:46 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/18 04:44:56 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,20 +73,3 @@ void	check(t_game *game)
 	check_map_walls(game);
 	check_map(game);
 }
-
-/*
-void	check_map(char *map)
-{
-	int	fd;
-	
-	fd = open(map, O_DIRECTORY);
-	if (fd >= 0)
-		ft_error("Argv[1] is not a directory!");
-	fd = open(map, O_RDONLY);
-	if (fd < 0)
-		ft_error("Argv[1] did not opened!");
-	if (!ft_strnstr(map, ".ber", 5))
-		ft_error(".ber File Required");
-	close (fd);
-}
-*/

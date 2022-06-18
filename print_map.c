@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 14:09:11 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/14 21:38:23 by jlebre           ###   ########.fr       */
+/*   Created: 2022/06/18 04:35:38 by admin             #+#    #+#             */
+/*   Updated: 2022/06/18 05:23:14 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	print_map(t_game game)
 			else if (game.str_line[hei * game.width + wid] == '1')
 				wall(game, wid, hei);
 			else if (game.str_line[hei * game.width + wid] == 'C')
-				bill(game, wid, hei);
+				coin(game, wid, hei);
 			else if (game.str_line[hei * game.width + wid] == 'P')
 				player(game, wid, hei);
 			else if (game.str_line[hei * game.width + wid] == 'E')

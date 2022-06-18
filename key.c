@@ -14,14 +14,26 @@
 
 int	key_press(int keycode, t_game *game)
 {
-	if (keycode == KEY_W)
+	if (keycode == KEY_W || keycode == UP)
+	{
+		player_sprite(keycode, game);	
 		move_w(game);
-	else if (keycode == KEY_A)
+	}
+	else if (keycode == KEY_A || keycode == LEFT)
+	{
+		player_sprite(keycode, game);	
 		move_a(game);
-	else if (keycode == KEY_D)
+	}
+	else if (keycode == KEY_D || keycode == RIGHT)
+	{
+		player_sprite(keycode, game);	
 		move_d(game);
-	else if (keycode == KEY_S)
+	}
+	else if (keycode == KEY_S || keycode == DOWN)
+	{
+		player_sprite(keycode, game);	
 		move_s(game);
+	}
 	else if (keycode == KEY_ESC)
 		exit (0);
 	return (0);
