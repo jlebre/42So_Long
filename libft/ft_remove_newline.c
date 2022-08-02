@@ -17,6 +17,8 @@ int	counter(char *str)
 	int	i;
 	int	counter;
 
+	if (!str)
+		return (0);
 	i = 0;
 	counter = 0;
 	while (str[i])
@@ -34,9 +36,13 @@ char	*ft_remove_newline(char *str)
 	int		i;
 	int		j;
 
+	if (!str)
+		return (NULL);
 	i = 0;
 	j = 0;
 	new_str = malloc(sizeof(char) * (ft_strlen(str) - counter(str) + 1));
+	if (!new_str)
+		return (NULL);
 	while (str[i])
 	{
 		if (str[i] == '\n')

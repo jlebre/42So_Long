@@ -18,6 +18,6 @@ int render(t_game *game)
         return (0);
     coin_animation(game);
     print_map(*game);
-    print_moves(game);
+    //print_moves(game);
     return (1);
 }

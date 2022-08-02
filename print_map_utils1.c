@@ -12,6 +12,7 @@
 
 #include "so_long.h"
 
+/*
 void	init_img1(t_game *game)
 {
 	int		img_width;
@@ -39,6 +40,7 @@ void	init_img1(t_game *game)
 	moves.num_9 = mlx_xpm_file_to_image(game->mlx, "./image/9_nb.xpm",
 			&img_width, &img_height);
 }
+*/
 
 void	init_img(t_game *game)
 {
@@ -55,7 +57,7 @@ void	init_img(t_game *game)
 			&img_width, &img_height);
 	game->safe = mlx_xpm_file_to_image(game->mlx, "./image/safe.xpm",
 			&img_width, &img_height);
-	init_img1(game);
+	//init_img1(game);
 }
 
 void    player_sprite(int   keycode, t_game *game)
@@ -83,7 +85,6 @@ void    print_moves1(t_game *game)
 {
     
 }
-*/
 
 void    print_moves(t_game *game)
 {
@@ -94,3 +95,4 @@ void    print_moves(t_game *game)
 			100, 100);
 	print_map(*game);
 }
+*/

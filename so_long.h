@@ -13,7 +13,7 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-//* 
+/* 
 // MAC KEYS:
 # define X_EVENT_KEY_PRESS		2
 # define X_EVENT_KEY_RELEASE	3
@@ -26,9 +26,8 @@
 # define DOWN 					124
 # define LEFT					123
 # define RIGHT 					125
-//*/
+*/
 
-/* 
 // LINUX KEYS:
 # define X_EVENT_KEY_PRESS		2
 # define X_EVENT_KEY_RELEASE	3
@@ -37,7 +36,10 @@
 # define KEY_A					97
 # define KEY_D					100
 # define KEY_S					115
-*/
+# define UP 					38
+# define DOWN 					40
+# define LEFT					37
+# define RIGHT 					39
 
 # include <stdlib.h>
 # include <stdio.h>
