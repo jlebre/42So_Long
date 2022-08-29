@@ -47,7 +47,7 @@ void	init_img(t_game *game)
 	int		img_width;
 	int		img_height;
 
-	game->background = mlx_xpm_file_to_image(game->mlx, "./image/background.xpm",
+	game->background = mlx_xpm_file_to_image(game->mlx, "image/background.xpm",
 			&img_width, &img_height);
 	game->wall = mlx_xpm_file_to_image(game->mlx, "./image/wall.xpm",
 			&img_width, &img_height);

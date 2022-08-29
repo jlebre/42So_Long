@@ -13,7 +13,7 @@
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 MLXFLAGS_MAC =  -lmlx -framework OpenGL -framework AppKit
-MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -fsanitize=address
 RM = @rm -fr
 NAME = so_long
 SRCS = so_long.c colors.c read_map.c print_map_utils1.c animations.c\

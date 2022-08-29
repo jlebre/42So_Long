@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:25:07 by jlebre            #+#    #+#             */
-/*   Updated: 2022/08/03 10:11:11 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/03 16:41:33 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*get_line(char *line, char *buf)
 	tmp = line;
 	line = malloc(ft_strlengnl(buf) + ft_strlengnl(line) + 1);
 	if (!line)
-		return (NULL);
+		return (0);
 	while (tmp && tmp[i])
 	{
 		line[i] = tmp[i];

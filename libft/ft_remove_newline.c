@@ -55,7 +55,6 @@ char	*ft_remove_newline(char *str)
 		}
 	}
 	new_str[j] = '\0';
-	free(new_str);
 	return (new_str);
 }
 
