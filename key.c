@@ -14,6 +14,7 @@
 
 int	key_press(int keycode, t_game *game)
 {
+	printf("%d\n", keycode);
 	if (keycode == KEY_W || keycode == UP)
 	{
 		player_sprite(keycode, game);	

@@ -31,15 +31,15 @@
 // LINUX KEYS:
 # define X_EVENT_KEY_PRESS		2
 # define X_EVENT_KEY_RELEASE	3
-# define KEY_ESC				27
+# define KEY_ESC				65307
 # define KEY_W					119
 # define KEY_A					97
-# define KEY_D					100
-# define KEY_S					115
-# define UP 					38
-# define DOWN 					40
-# define LEFT					37
-# define RIGHT 					39
+# define KEY_D					115
+# define KEY_S					100
+# define UP 					65362
+# define DOWN 					65364
+# define LEFT					65361
+# define RIGHT 					65363
 
 # include <stdlib.h>
 # include <stdio.h>
