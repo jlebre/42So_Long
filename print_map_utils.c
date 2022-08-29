@@ -24,15 +24,9 @@ void	wall(t_game game, int wid, int hei)
 		wid * 64, hei * 64);
 }
 
-void	bill(t_game game, int wid, int hei)
-{
-	mlx_put_image_to_window(game.mlx, game.mlx_win, game.bill,
-		wid * 64, hei * 64);
-}
-
 void	coin(t_game game, int wid, int hei)
 {
-	mlx_put_image_to_window(game.mlx, game.mlx_win, game.coin,
+	mlx_put_image_to_window(game.mlx, game.mlx_win, game.pcoin,
 		wid * 64, hei * 64);
 }
 
@@ -53,3 +47,11 @@ void	safe(t_game game, int wid, int hei)
 	mlx_put_image_to_window(game.mlx, game.mlx_win, game.safe,
 		wid * 64, hei * 64);
 }
+
+/*
+void	bill(t_game game, int wid, int hei)
+{
+	mlx_put_image_to_window(game.mlx, game.mlx_win, game.bill,
+		wid * 64, hei * 64);
+}
+*/

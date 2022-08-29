@@ -76,7 +76,8 @@ typedef struct s_game
 	void	*mlx;
 	void	*mlx_win;
 	void	*background;
-	void	*coin;
+	void	**coin;
+	void    *pcoin;
 	void	*bill;
 	void	*pato;
 	void	*safe;
@@ -85,6 +86,7 @@ typedef struct s_game
 
 //ANIMATIONS
 void    coin_animation(t_game *game);
+void    init_coin_animation(t_game *game);
 
 //ERROR
 void	ft_error(char *err);
@@ -102,7 +104,7 @@ void	print_map(t_game game);
 void	init_img(t_game *game);
 void	background(t_game game, int wid, int hei);
 void	wall(t_game game, int wid, int hei);
-void	bill(t_game game, int wid, int hei);
+//void	bill(t_game game, int wid, int hei);
 void	coin(t_game game, int wid, int hei);
 void	player(t_game game, int wid, int hei);
 void	safe(t_game game, int wid, int hei);

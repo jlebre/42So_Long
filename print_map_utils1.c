@@ -51,12 +51,11 @@ void	init_img(t_game *game)
 			&img_width, &img_height);
 	game->wall = mlx_xpm_file_to_image(game->mlx, "./image/wall.xpm",
 			&img_width, &img_height);
-	game->bill = mlx_xpm_file_to_image(game->mlx, "./image/bill.xpm",
-			&img_width, &img_height);
 	game->pato = mlx_xpm_file_to_image(game->mlx, "./image/pato_s.xpm",
 			&img_width, &img_height);
 	game->safe = mlx_xpm_file_to_image(game->mlx, "./image/safe.xpm",
 			&img_width, &img_height);
+	init_coin_animation(game);
 	//init_img1(game);
 }
 
@@ -95,4 +94,9 @@ void    print_moves(t_game *game)
 			100, 100);
 	print_map(*game);
 }
+*/
+
+/*
+game->bill = mlx_xpm_file_to_image(game->mlx, "./image/bill.xpm",
+			&img_width, &img_height);
 */
