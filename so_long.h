@@ -44,7 +44,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <mlx.h>
+# include "mlx_linux/mlx.h"
 # include <fcntl.h>
 # include "libft/libft.h"
 
