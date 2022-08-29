@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup_without_newline.c                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/11 21:27:22 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/11 21:27:22 by marvin           ###   ########.fr       */
+/*   Created: 2021/11/15 14:30:18 by jlebre            #+#    #+#             */
+/*   Updated: 2021/11/15 16:40:56 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup_without_newline(const char *str)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*strwnl;
-	char	*new_str;
+	size_t	i;
 
-	if (!str)
+	i = 0;
+	if ((dest == NULL) && (src == NULL))
 		return (NULL);
-	strwnl = ft_remove_newline((char *)str);
-	if (!strwnl)
-		return (NULL);
-	new_str = ft_strdup(strwnl);
-	if (!new_str)
-		return (NULL);
-	free (new_str);
-	return (new_str);
+	while (i < n)
+	{
+		*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+		i++;
+	}
+	return (dest);
 }

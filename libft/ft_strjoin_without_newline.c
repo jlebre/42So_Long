@@ -21,9 +21,16 @@ char	*ft_strjoin_without_newline(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	str1 = ft_remove_newline((char *)s1);
+	if (!str1)
+		return (NULL);
 	str2 = ft_remove_newline((char *)s2);
+	if (!str2)
+		return (NULL);
 	str = ft_strjoin((const char *)str1, (const char *)str2);
-	return (str);
+	if (!str)
+		return (NULL);
+	free (str);
+	return (str = ft_strjoin((const char *)str1, (const char *)str2));
 }
 
 /*
