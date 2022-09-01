@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 22:22:21 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/01 17:41:57 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/01 18:10:43 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	victory(t_game *game)
 
 void	destroy_img(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	mlx_destroy_image(game->mlx, game->background);
@@ -35,18 +35,18 @@ void	destroy_img(t_game *game)
 	mlx_destroy_image(game->mlx, game->wall);
 	while (i < 12)
 	{
-			mlx_destroy_image(game->mlx, game->coin[i]);
-			i++;
+		mlx_destroy_image(game->mlx, game->coin[i]);
+		i++;
 	}
 	i = 0;
 	while (i < 4)
 	{
 		mlx_destroy_image(game->mlx, game->pato[i]);
-		i++;	
+		i++;
 	}	
 }
 
-int		ft_exit(t_game *game)
+int	ft_exit(t_game *game)
 {
 	free(game->str_line);
 	mlx_destroy_window(game->mlx, game->mlx_win);

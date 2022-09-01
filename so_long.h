@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/01 17:52:13 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/01 18:20:28 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ void	check(t_game *game);
 //INIT IMAGES
 void	init_img(t_game *game);
 void    init_coin(t_game *game);
+void	init_coin1(t_game *game);
 void    init_vars(t_game *game);
 
 //CREATE MAP

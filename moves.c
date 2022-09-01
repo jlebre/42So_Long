@@ -6,12 +6,11 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:59:38 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/01 17:42:45 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/01 18:16:30 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 
 void	move_w(t_game *game)
 {
@@ -25,7 +24,7 @@ void	move_w(t_game *game)
 		i++;
 	}
 	if (game->str_line[i - game->width] == 'C')
-			game->col_count++;
+		game->col_count++;
 	if (game->str_line[i - game->width] == 'E'
 		&& game->col_count == game->num_c)
 		victory(game);
@@ -52,7 +51,7 @@ void	move_a(t_game *game)
 		i++;
 	}
 	if (game->str_line[i - 1] == 'C')
-			game->col_count++;
+		game->col_count++;
 	if (game->str_line[i - 1] == 'E'
 		&& game->col_count == game->num_c)
 		victory(game);
@@ -79,7 +78,7 @@ void	move_d(t_game *game)
 		i++;
 	}
 	if (game->str_line[i + game->width] == 'C')
-			game->col_count++;
+		game->col_count++;
 	if (game->str_line[i + game->width] == 'E'
 		&& game->col_count == game->num_c)
 		victory(game);
@@ -106,7 +105,7 @@ void	move_s(t_game *game)
 		i++;
 	}
 	if (game->str_line[i + 1] == 'C')
-			game->col_count++;
+		game->col_count++;
 	if (game->str_line[i + 1] == 'E'
 		&& game->col_count == game->num_c)
 		victory(game);

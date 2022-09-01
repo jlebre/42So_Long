@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:52 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/01 17:33:53 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/01 18:22:11 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	check_map_walls(t_game *game)
 		}
 		i++;
 	}
-	
 }
 
 void	check_map(t_game *game)
@@ -76,6 +75,3 @@ void	check(t_game *game)
 	check_map_walls(game);
 	check_map(game);
 }
-//ft_printf("Hei: %d\nWid: %d\nStrLen: %d\n",game->height, game->width, ft_strlen(game->str_line));
-
-//ft_printf("\nNum_c: %d\nNum_e: %d\nNum_p: %d\n\n", game->num_c, game->num_e, game->num_p);

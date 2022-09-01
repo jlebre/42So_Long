@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 04:35:38 by admin             #+#    #+#             */
-/*   Updated: 2022/09/01 17:27:59 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/01 18:13:59 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	print_map(t_game game)
 {
-	int		wid;
-	int		hei;
+	int	wid;
+	int	hei;
 
 	hei = 0;
 	while (hei < game.height)
