@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 13:33:21 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/18 00:09:08 by admin            ###   ########.fr       */
+/*   Updated: 2022/09/01 18:29:10 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int		ft_atoi(const char *str);
 char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, int start, int len);
 char	*ft_strjoin(char const *s1, char const *s2);
-
 
 //GET_NEXT_LINE
 
