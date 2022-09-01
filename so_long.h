@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/18 06:43:50 by admin            ###   ########.fr       */
+/*   Updated: 2022/09/01 17:52:13 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@
 # define KEY_D					115
 # define KEY_S					100
 # define UP 					65362
-# define DOWN 					65364
+# define DOWN 					65363
 # define LEFT					65361
-# define RIGHT 					65363
+# define RIGHT 					65364
 
 # include <stdlib.h>
 # include <stdio.h>
@@ -76,45 +76,50 @@ typedef struct s_game
 	void	*mlx;
 	void	*mlx_win;
 	void	*background;
-	void	**coin;
+	void	*coin[12];
 	void    *pcoin;
-	void	*bill;
-	void	*pato;
+	void	*pato[4];
+	void	*ppato;
 	void	*safe;
+	void	*safe_open;
 	void	*wall;
 }	t_game;
 
 //ANIMATIONS
+void    player_sprite(int   keycode, t_game *game);
 void    coin_animation(t_game *game);
-void    init_coin_animation(t_game *game);
-
-//ERROR
-void	ft_error(char *err);
-
-//MAP DIMENSIONS
-int		map_width(char **map);
-int		map_height(char **map);
+void    coin_animation1(t_game *game);
 
 //CHECK MAP WALLS
+void	check_map_walls(t_game *game);
+void	check_map_name(char *map);
+void	check_map(t_game *game);
 void	check(t_game *game);
+
+//INIT IMAGES
+void	init_img(t_game *game);
+void    init_coin(t_game *game);
+void    init_vars(t_game *game);
 
 //CREATE MAP
 void	read_map(char *file, t_game *game);
 void	print_map(t_game game);
-void	init_img(t_game *game);
+int		render(t_game *game);
+//void	print_map_utils(t_game game);
+//void    print_moves(t_game *game);
+
+//IMAGE TO WINDOW
 void	background(t_game game, int wid, int hei);
 void	wall(t_game game, int wid, int hei);
-//void	bill(t_game game, int wid, int hei);
 void	coin(t_game game, int wid, int hei);
 void	player(t_game game, int wid, int hei);
 void	safe(t_game game, int wid, int hei);
-void	print_map_utils(t_game game);
-void    player_sprite(int   keycode, t_game *game);
-int		render(t_game *game);
-void    print_moves(t_game *game);
+void	safe_open(t_game game, int wid, int hei);
 
 //KEY PRESS
 int		key_press(int keycode, t_game *game);
+
+//MOVES
 void	move_w(t_game *game);
 void	move_a(t_game *game);
 void	move_d(t_game *game);
@@ -126,9 +131,13 @@ int		ft_green(char *str);
 int		ft_yellow(char *str);
 
 //VICTORY
-void	victory(void);
+void	victory(t_game *game);
+
+//ERROR
+void	ft_error(char *err);
 
 //EXIT
 int		ft_exit(t_game *game);
+void	destroy_img(t_game *game);
 
 #endif

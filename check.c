@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:52 by jlebre            #+#    #+#             */
-/*   Updated: 2022/08/31 15:15:27 by marvin           ###   ########.fr       */
+/*   Updated: 2022/09/01 17:33:53 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	check_map(t_game *game)
 			game->num_p++;
 		i++;
 	}
-	ft_printf("\nNum_c: %d\nNum_e: %d\nNum_p: %d\n\n", game->num_c, game->num_e, game->num_p);
 	if (game->num_c == 0)
 		ft_error("Map must have at least one collectible!");
 	if (game->num_e == 0)
@@ -77,3 +76,6 @@ void	check(t_game *game)
 	check_map_walls(game);
 	check_map(game);
 }
+//ft_printf("Hei: %d\nWid: %d\nStrLen: %d\n",game->height, game->width, ft_strlen(game->str_line));
+
+//ft_printf("\nNum_c: %d\nNum_e: %d\nNum_p: %d\n\n", game->num_c, game->num_e, game->num_p);

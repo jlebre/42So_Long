@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 17:56:13 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/18 00:14:49 by admin            ###   ########.fr       */
+/*   Updated: 2022/09/01 17:34:47 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,14 @@ void	read_map(char *file, t_game *game)
 	line = get_next_line(fd);
 	game->height = 0;
 	game->width = (ft_strlen(line) - 1);
-	game->str_line = ft_strdup_without_newline(line);
-	free(line);
+	//game->str_line = ft_strdup_without_newline(line);
 	while (line)
 	{
 		game->height++;
+		game->str_line = ft_strjoin_without_newline(game->str_line, line);
 		line = get_next_line(fd);
-		if (line)
-			game->str_line = ft_strjoin_without_newline(game->str_line, line);
 	}
 	close (fd);
-	ft_printf("%s\n", game->str_line);
 }
+
+	//ft_printf("%s\n", game->str_line);

@@ -3,46 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   animations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 04:05:55 by admin             #+#    #+#             */
-/*   Updated: 2022/06/18 06:36:10 by admin            ###   ########.fr       */
+/*   Updated: 2022/09/01 16:57:14 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    init_coin_animation(t_game *game)
+//Player Animations
+void    player_sprite(int   keycode, t_game *game)
 {
-    int		img_width;
-	int		img_height;
-
-    game->coin[0] = mlx_xpm_file_to_image(game->mlx, "./image/coin1.xpm",
-                &img_width, &img_height);
-    game->coin[1] = mlx_xpm_file_to_image(game->mlx, "./image/coin2.xpm",
-                &img_width, &img_height);
-    game->coin[2] = mlx_xpm_file_to_image(game->mlx, "./image/coin3.xpm",
-                &img_width, &img_height);
-    game->coin[3] = mlx_xpm_file_to_image(game->mlx, "./image/coin4.xpm",
-                &img_width, &img_height);
-    game->coin[4] = mlx_xpm_file_to_image(game->mlx, "./image/coin5.xpm",
-                &img_width, &img_height);
-    game->coin[5] = mlx_xpm_file_to_image(game->mlx, "./image/coin6.xpm",
-                &img_width, &img_height);
-    game->coin[6] = mlx_xpm_file_to_image(game->mlx, "./image/coin7.xpm",
-                &img_width, &img_height);
-    game->coin[7] = mlx_xpm_file_to_image(game->mlx, "./image/coin8.xpm",
-                &img_width, &img_height);
-    game->coin[8] = mlx_xpm_file_to_image(game->mlx, "./image/coin9.xpm",
-                &img_width, &img_height);
-    game->coin[9] = mlx_xpm_file_to_image(game->mlx, "./image/coin10.xpm",
-                &img_width, &img_height);
-    game->coin[10] = mlx_xpm_file_to_image(game->mlx, "./image/coin11.xpm",
-                &img_width, &img_height);
-    game->coin[11] = mlx_xpm_file_to_image(game->mlx, "./image/coin12.xpm",
-                &img_width, &img_height);
+    if (keycode == KEY_W || keycode == UP)
+        game->ppato = game->pato[1];
+    else if (keycode == KEY_A || keycode == LEFT)
+		game->ppato = game->pato[2];
+	else if (keycode == KEY_D || keycode == RIGHT)
+		game->ppato = game->pato[3];
+	else if (keycode == KEY_S || keycode == DOWN)
+		game->ppato = game->pato[0];
+	print_map(*game);
 }
 
+//Coin Animations
 void    coin_animation1(t_game *game)
 {
     if (game->time_coin < 2400)

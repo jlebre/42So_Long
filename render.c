@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 05:38:33 by admin             #+#    #+#             */
-/*   Updated: 2022/06/18 06:50:44 by admin            ###   ########.fr       */
+/*   Updated: 2022/09/01 17:07:12 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ int render(t_game *game)
 {
     if (!game->mlx)
         return (0);
-    coin_animation(game);
     print_map(*game);
-    //print_moves(game);
+    coin_animation(game);
     return (1);
 }
+
+//print_moves(game);

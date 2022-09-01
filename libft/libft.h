@@ -59,8 +59,8 @@ int		ft_putpointer_fd(unsigned long ptr, int fd);
 int		ft_unsigned(unsigned int nb, int fd);
 
 //
-char	*ft_strjoin_without_newline(char const *s1, char const *s2);
+char	*ft_strjoin_without_newline(char *s1, char *s2);
 char	*ft_strdup_without_newline(const char *str);
-char	*ft_remove_newline(char *str);
+void	ft_remove_newline(char *str);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:32:23 by jlebre            #+#    #+#             */
-/*   Updated: 2022/08/31 15:14:44 by marvin           ###   ########.fr       */
+/*   Updated: 2022/09/01 17:52:27 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 	if (!game.mlx)
 		ft_error("MLX init error!");
 	init_img(&game);
+	init_vars(&game);
 	game.mlx_win = mlx_new_window(game.mlx,
 			game.width * 64, game.height * 64, "so_long");
 	mlx_loop_hook(game.mlx, render, &game);
@@ -34,5 +35,3 @@ int	main(int argc, char **argv)
 	mlx_loop(game.mlx);
 	return (0);
 }
-
-//ft_printf("test\n");
