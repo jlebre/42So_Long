@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: admin <admin@student.42.fr>                +#+  +:+       +#+         #
+#    By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 11:24:43 by jlebre            #+#    #+#              #
-#    Updated: 2022/06/18 00:08:52 by admin            ###   ########.fr        #
+#    Updated: 2022/09/01 18:41:27 by jlebre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME	= libft.a
 LIB		= .
 
 SRCS	= ft_strlen.c ft_strchr.c ft_strrchr.c \
-			ft_atoi.c  ft_strdup.c\
+			ft_atoi.c ft_strdup.c\
 			ft_substr.c ft_strjoin.c ft_split.c\
 			get_next_line.c get_next_line_utils.c\
 			ft_printf.c func_extra.c func_extra1.c\
