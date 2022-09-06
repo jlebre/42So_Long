@@ -6,14 +6,15 @@
 #    By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 16:32:14 by jlebre            #+#    #+#              #
-#    Updated: 2022/09/06 19:36:09 by jlebre           ###   ########.fr        #
+#    Updated: 2022/09/06 23:12:13 by jlebre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 MLXFLAGS_MAC =  -lmlx -framework OpenGL -framework AppKit
-MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -fsanitize=address
+MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+#-fsanitize=address
 RM = @rm -fr
 NAME = so_long
 SRCS = so_long.c colors.c read_map.c moves.c animations.c init_images.c\
