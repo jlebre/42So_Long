@@ -20,8 +20,13 @@ void	ft_error(char *err)
 
 void	victory(t_game *game)
 {
+	free(game->str_line);
+	mlx_destroy_window(game->mlx, game->mlx_win);
+	destroy_img(game);
+	mlx_destroy_display(game->mlx);
+	free(game->mlx);
 	ft_green("You Won!\n");
-	ft_exit (game);
+	exit (0);
 }
 
 void	destroy_img(t_game *game)

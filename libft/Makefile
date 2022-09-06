@@ -20,7 +20,7 @@ NAME	= libft.a
 LIB		= .
 
 SRCS	= ft_strlen.c ft_strchr.c ft_strrchr.c \
-			ft_atoi.c ft_strdup.c\
+			ft_atoi.c ft_strdup.c ft_itoa.c\
 			ft_substr.c ft_strjoin.c ft_split.c\
 			get_next_line.c get_next_line_utils.c\
 			ft_printf.c func_extra.c func_extra1.c\

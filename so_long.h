@@ -93,6 +93,7 @@ void    coin_animation1(t_game *game);
 //CHECK MAP WALLS
 void	check_map_walls(t_game *game);
 void	check_map_name(char *map);
+void	check_path(t_game *game);
 void	check_map(t_game *game);
 void	check(t_game *game);
 
@@ -106,8 +107,6 @@ void    init_vars(t_game *game);
 void	read_map(char *file, t_game *game);
 void	print_map(t_game game);
 int		render(t_game *game);
-//void	print_map_utils(t_game game);
-//void    print_moves(t_game *game);
 
 //IMAGE TO WINDOW
 void	background(t_game game, int wid, int hei);

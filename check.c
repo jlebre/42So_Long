@@ -59,13 +59,18 @@ void	check_map(t_game *game)
 			game->num_p++;
 		i++;
 	}
-	if (game->num_c == 0)
-		ft_error("Map must have at least one collectible!");
-	if (game->num_e == 0)
-		ft_error("Map must have at least one exit!");
-	if (game->num_p != 1)
-		ft_error("Map must have at least one starting position!");
 }
+
+/*
+void	check_path(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	if (game->str_line[i] == 'P')
+		d
+}
+*/
 
 void	check(t_game *game)
 {
@@ -74,4 +79,14 @@ void	check(t_game *game)
 	game->num_p = 0;
 	check_map_walls(game);
 	check_map(game);
+	if (game->num_c == 0)
+		ft_error("Map must have at least one collectible!\n");
+	if (game->num_e == 0)
+		ft_error("Map must have at least one starting position!\n");
+	if (game->num_e != 1)
+		ft_error("Map can only have one exit!\n");
+	if (game->num_p == 0)
+		ft_error("Map must have one starting position!\n");
+	if (game->num_p != 1)
+		ft_error("Map can only have one starting position!\n");
 }

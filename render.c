@@ -17,8 +17,8 @@ int	render(t_game *game)
 	if (!game->mlx)
 		return (0);
 	print_map(*game);
+	mlx_string_put(game->mlx, game->mlx_win, 10, 30, 0xffffffff,
+		ft_itoa(game->counter));
 	coin_animation(game);
 	return (1);
 }
-
-//print_moves(game);
