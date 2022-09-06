@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/06 20:02:27 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/06 22:59:25 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ typedef struct s_game
 {
 	int		height;
 	int		width;
-	int		pos;
+	int		pos_x;
+	int		pos_y;
+	int		pos_exit_x;
+	int		pos_exit_y;
 	int		counter;
 	int		col_count;
 	int		num_c;
@@ -82,11 +85,12 @@ void	coin_animation1(t_game *game);
 void	check_map_walls(t_game *game);
 void	check_map_name(char *map);
 void	check_path(t_game *game);
-void    check_all_dir(t_game *game, int k);
-void    check_up(t_game *game, int k);
-void    check_down(t_game *game, int k);
-void    check_left(t_game *game, int k);
-void    check_right(t_game *game, int k);
+int		check_exit(t_game *game, char **mapa);
+char	ft_mini_strchar(char *str, char c);
+char	**convert(t_game *game, int j, int k);
+void	initial_position(t_game *game, int i, int j, char **mapa);
+int		check_case(t_game *game, int x, int y, char **map);
+void	check_all_dir(t_game *game, int x, int y, char **map);
 void	check_map(t_game *game);
 void	check(t_game *game);
 

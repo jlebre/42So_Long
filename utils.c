@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 22:22:21 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/06 18:35:16 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/06 21:32:39 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	destroy_img(t_game *game)
 int	ft_exit(t_game *game)
 {
 	free(game->str_line);
-	free(game->str_line_test);
 	mlx_destroy_window(game->mlx, game->mlx_win);
 	destroy_img(game);
 	mlx_destroy_display(game->mlx);

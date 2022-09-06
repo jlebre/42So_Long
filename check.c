@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:52 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/06 19:36:13 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/06 23:02:26 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,41 @@ void	check(t_game *game)
 	if (game->num_p != 1)
 		ft_error("Map can only have one starting position!\n");
 	check_path(game);
+}
+
+void	check_path(t_game *game)
+{
+	char	**map;
+	int		l;
+	int		is_error;
+
+	map = convert(game, -1, 0);
+	l = -1;
+	check_all_dir(game, game->pos_x, game->pos_y, map);
+	is_error = check_exit(game, map);
+	while (++l < game->height)
+	{
+		if ((ft_mini_strchar(map[l], 'C') == 'C'))
+			is_error = 1;
+		free(map[l]);
+	}
+	free(map);
+	if (is_error)
+		ft_error("Map does not have a valid path!\n");
+}
+
+char	ft_mini_strchar(char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+	{
+		if (str[i] == c)
+			return (c);
+		i++;
+	}
+	return (0);
 }

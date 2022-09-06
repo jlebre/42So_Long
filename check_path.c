@@ -6,130 +6,84 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 18:04:15 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/06 20:09:57 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/06 22:21:56 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	check_path(t_game *game)
+int	check_exit(t_game *game, char **mapa)
 {
-	int	i;
-    int j;
-    int k;
+	int	x;
+	int	y;
 
-	i = 0;
-    j = 0;
-    game->pos = 0;
-    game->str_line_test = game->str_line;
-    ft_printf("%s\n", game->str_line_test);
-    while (game->str_line_test[game->pos] != 'P')
-        game->pos++;
-    k = game->pos;
-    while (j < ft_strlen(game->str_line))
-    {   
-        check_all_dir(game, k);
-        if (game->str_line_test[game->pos + 1] == 'P')
-            k += 1;
-        check_all_dir(game, k);
-        j++;
-    }
-    ft_printf("%s\n", game->str_line_test);
-    while (i < ft_strlen(game->str_line_test))
-    {
-        if (game->str_line_test[i] == 'C')
-            ft_error("Map does not have a valid path!\n");
-        i++;
-    }
-    i = 0;
-    while (game->str_line_test[i] != 'E')
-        i++;
-    if (game->str_line_test[i + 1] != 'P'
-        && game->str_line_test[i - 1] != 'P'
-        && game->str_line_test[i + game->width] != 'P'
-        && game->str_line_test[i - game->width] != 'P') 
-    ft_error("Map does not have a valid path!\n");
+	x = game->pos_exit_x;
+	y = game->pos_exit_y;
+	if (mapa[y][x + 1] == 'P' || mapa[y][x - 1] == 'P' \
+	|| mapa[y + 1][x] == 'P' || mapa[y - 1][x] == 'P')
+		return (0);
+	return (1);
 }
 
-/*
-check_up(game, k);
-check_down(game, k);
-check_left(game, k);
-check_right(game, k);
-*/
-
-void    check_all_dir(t_game *game, int k)
+void	initial_position(t_game *game, int i, int j, char **mapa)
 {
-    game->pos = k;
-	while (game->str_line_test[game->pos - game->width] != '1'
-		&& game->str_line_test[game->pos - game->width] != 'E')
-    {
-		game->str_line_test[game->pos - game->width] = 'P';
-        game->pos -= game->width;
-    }
-    game->pos = k;
-    while (game->str_line_test[game->pos + game->width] != '1'
-		&& game->str_line_test[game->pos + game->width] != 'E')
+	if (mapa[j][i] == 'P')
 	{
-        game->str_line_test[game->pos + game->width] = 'P';
-        game->pos += game->width;
-    }
-    game->pos = k;
-    while (game->str_line_test[game->pos - 1] != '1'
-		&& game->str_line_test[game->pos - 1] != 'E')
-    {
-		game->str_line_test[game->pos - 1] = 'P';
-        game->pos -= 1;
-    }
-    game->pos = k;
-    while (game->str_line_test[game->pos + 1] != '1'
-		&& game->str_line_test[game->pos + 1] != 'E')
-    {
-		game->str_line_test[game->pos + 1] = 'P';
-        game->pos += 1;   
-    }
-}
-
-void    check_up(t_game *game, int k)
-{
-    game->pos = k;
-	while (game->str_line_test[game->pos - game->width] != '1'
-		&& game->str_line_test[game->pos - game->width] != 'E')
-    {
-		game->str_line_test[game->pos - game->width] = 'P';
-        game->pos -= game->width;
-    }
-}
-
-void    check_down(t_game *game, int k)
-{
-    game->pos = k;
-	while (game->str_line_test[game->pos + game->width] != '1'
-		&& game->str_line_test[game->pos + game->width] != 'E')
+		game->pos_x = i;
+		game->pos_y = j;
+	}
+	else if (mapa[j][i] == 'E')
 	{
-        game->str_line_test[game->pos + game->width] = 'P';
-        game->pos += game->width;
-    }
+		game->pos_exit_x = i;
+		game->pos_exit_y = j;
+	}
 }
 
-void    check_left(t_game *game, int k)
+char	**convert(t_game *game, int j, int k)
 {
-    game->pos = k;
-	while (game->str_line_test[game->pos - 1] != '1'
-		&& game->str_line_test[game->pos - 1] != 'E')
-    {
-		game->str_line_test[game->pos - 1] = 'P';
-        game->pos -= 1;
-    }
+	int		i;
+	char	**mapa;
+
+	mapa = malloc(sizeof(char *) * (1 + game->height));
+	if (!mapa)
+		return (NULL);
+	while (++j < game->height)
+	{
+		i = 0;
+		mapa[j] = malloc(sizeof(char) * (game->width + 1));
+		if (!mapa[j])
+			return (NULL);
+		while (i < game->width)
+		{
+			mapa[j][i] = game->str_line[k++];
+			initial_position(game, i, j, mapa);
+			i++;
+		}
+		mapa[j][i] = '\0';
+	}
+	return (mapa);
 }
 
-void    check_right(t_game *game, int k)
+int	check_case(t_game *game, int x, int y, char **map)
 {
-    game->pos = k;
-	while (game->str_line_test[game->pos + 1] != '1'
-		&& game->str_line_test[game->pos + 1] != 'E')
-    {
-		game->str_line_test[game->pos + 1] = 'P';
-        game->pos += 1;   
-    }
+	if (x < 0 || y < 0 || x >= game->width || y >= game->height)
+		return (0);
+	if (map[y][x] != '1' && map[y][x] != 'E' && map[y][x] != 'P')
+	{
+		map[y][x] = 'P';
+		return (1);
+	}
+	return (0);
+}
+
+void	check_all_dir(t_game *game, int x, int y, char **map)
+{
+	if (check_case(game, x - 1, y, map))
+		check_all_dir(game, x - 1, y, map);
+	if (check_case(game, x + 1, y, map))
+		check_all_dir(game, x + 1, y, map);
+	if (check_case(game, x, y - 1, map))
+		check_all_dir(game, x, y - 1, map);
+	if (check_case(game, x, y + 1, map))
+		check_all_dir(game, x, y + 1, map);
 }
