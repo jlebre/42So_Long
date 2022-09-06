@@ -73,16 +73,16 @@ void	move_d(t_game *game)
 			break ;
 		i++;
 	}
-	if (game->str_line[i + game->width] == 'C')
+	if (game->str_line[i + 1] == 'C')
 		game->col_count++;
-	if (game->str_line[i + game->width] == 'E'
+	if (game->str_line[i + 1] == 'E'
 		&& game->col_count == game->num_c)
 		victory(game);
-	else if (game->str_line[i + game->width] != '1'
-		&& game->str_line[i + game->width] != 'E')
+	else if (game->str_line[i + 1] != '1'
+		&& game->str_line[i + 1] != 'E')
 	{
 		game->str_line[i] = '0';
-		game->str_line[i + game->width] = 'P';
+		game->str_line[i + 1] = 'P';
 		game->counter++;
 	}
 }
@@ -98,16 +98,16 @@ void	move_s(t_game *game)
 			break ;
 		i++;
 	}
-	if (game->str_line[i + 1] == 'C')
+	if (game->str_line[i + game->width] == 'C')
 		game->col_count++;
-	if (game->str_line[i + 1] == 'E'
+	if (game->str_line[i + game->width] == 'E'
 		&& game->col_count == game->num_c)
 		victory(game);
-	else if (game->str_line[i + 1] != '1'
-		&& game->str_line[i + 1] != 'E')
+	else if (game->str_line[i + game->width] != '1'
+		&& game->str_line[i + game->width] != 'E')
 	{
 		game->str_line[i] = '0';
-		game->str_line[i + 1] = 'P';
+		game->str_line[i + game->width] = 'P';
 		game->counter++;
 	}
 }

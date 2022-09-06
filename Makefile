@@ -6,7 +6,7 @@
 #    By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 16:32:14 by jlebre            #+#    #+#              #
-#    Updated: 2022/09/01 17:44:03 by jlebre           ###   ########.fr        #
+#    Updated: 2022/09/06 19:36:09 by jlebre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 RM = @rm -fr
 NAME = so_long
 SRCS = so_long.c colors.c read_map.c moves.c animations.c init_images.c\
-	print_map.c check.c key.c utils.c image_to_window.c render.c
+	print_map.c check.c key.c utils.c image_to_window.c render.c check_path.c
 OBJS = $(SRCS:.c=.o)
 
 HEADER = so_long.h libft/libft.h

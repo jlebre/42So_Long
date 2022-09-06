@@ -20,9 +20,9 @@ void	player_sprite(int keycode, t_game *game)
 	else if (keycode == KEY_A || keycode == LEFT)
 		game->ppato = game->pato[2];
 	else if (keycode == KEY_D || keycode == RIGHT)
-		game->ppato = game->pato[3];
-	else if (keycode == KEY_S || keycode == DOWN)
 		game->ppato = game->pato[0];
+	else if (keycode == KEY_S || keycode == DOWN)
+		game->ppato = game->pato[3];
 	print_map(*game);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:03:52 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/01 18:33:55 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/06 19:36:13 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,6 @@ void	check_map(t_game *game)
 	}
 }
 
-/*
-void	check_path(t_game *game)
-{
-	if (game->str_line == 'P')
-	ft_error("Invalid Path!\n");
-}
-*/
-
 void	check(t_game *game)
 {
 	game->num_c = 0;
@@ -79,11 +71,12 @@ void	check(t_game *game)
 	if (game->num_c == 0)
 		ft_error("Map must have at least one collectible!\n");
 	if (game->num_e == 0)
-		ft_error("Map must have at least one starting position!\n");
+		ft_error("Map must have one exit!\n");
 	if (game->num_e != 1)
 		ft_error("Map can only have one exit!\n");
 	if (game->num_p == 0)
 		ft_error("Map must have one starting position!\n");
 	if (game->num_p != 1)
 		ft_error("Map can only have one starting position!\n");
+	check_path(game);
 }

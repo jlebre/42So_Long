@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:34:45 by jlebre            #+#    #+#             */
-/*   Updated: 2022/09/01 18:20:28 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/09/06 20:02:27 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@
 # define KEY_ESC				65307
 # define KEY_W					119
 # define KEY_A					97
-# define KEY_D					115
-# define KEY_S					100
+# define KEY_D					100
+# define KEY_S					115
 # define UP 					65362
-# define DOWN 					65363
+# define DOWN 					65364
 # define LEFT					65361
-# define RIGHT 					65364
+# define RIGHT 					65363
 
 # include <stdlib.h>
 # include <stdio.h>
@@ -52,6 +52,7 @@ typedef struct s_game
 {
 	int		height;
 	int		width;
+	int		pos;
 	int		counter;
 	int		col_count;
 	int		num_c;
@@ -59,6 +60,7 @@ typedef struct s_game
 	int		num_p;
 	int		time_coin;
 	char	*str_line;
+	char	*str_line_test;
 	void	*mlx;
 	void	*mlx_win;
 	void	*background;
@@ -80,6 +82,11 @@ void	coin_animation1(t_game *game);
 void	check_map_walls(t_game *game);
 void	check_map_name(char *map);
 void	check_path(t_game *game);
+void    check_all_dir(t_game *game, int k);
+void    check_up(t_game *game, int k);
+void    check_down(t_game *game, int k);
+void    check_left(t_game *game, int k);
+void    check_right(t_game *game, int k);
 void	check_map(t_game *game);
 void	check(t_game *game);
 
