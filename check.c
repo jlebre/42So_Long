@@ -64,7 +64,8 @@ void	check_map(t_game *game)
 /*
 void	check_path(t_game *game)
 {
-	if (game->str_line[i] == 'P')
+	if (game->str_line == 'P')
+	ft_error("Invalid Path!\n");
 }
 */
 

@@ -43,6 +43,8 @@ void	read_map(char *file, t_game *game)
 	if (fd <= 0)
 		ft_error("File failed to open!\n");
 	line = get_next_line(fd);
+	if (line == NULL || line[0] == '\0')
+		ft_error("Empty Map!\n");
 	game->height = 0;
 	game->width = (ft_strlen(line) - 1);
 	while (line)
@@ -53,7 +55,3 @@ void	read_map(char *file, t_game *game)
 	}
 	close (fd);
 }
-/*
-	if (line == NULL || line[0] == '\0')
-		ft_error("Empty Map!\n");
-*/
