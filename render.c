@@ -14,11 +14,14 @@
 
 int	render(t_game *game)
 {
+	char	*numstr;
+
 	if (!game->mlx)
 		return (0);
 	print_map(*game);
-	mlx_string_put(game->mlx, game->mlx_win, 10, 30, 0xffffffff,
-		ft_itoa(game->counter));
+	numstr = ft_itoa(game->counter);
+	mlx_string_put(game->mlx, game->mlx_win, 10, 30, 0xffffffff, numstr);
+	free(numstr);
 	coin_animation(game);
 	return (1);
 }

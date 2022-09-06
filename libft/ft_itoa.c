@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 		arr[0] = '-';
 		n *= -1;
 	}
-		arr[size] = '\0';
+	arr[size] = '\0';
 	while (n > 0)
 	{
 		arr[size - 1] = ((n % 10) + '0');

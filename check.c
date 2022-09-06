@@ -64,11 +64,7 @@ void	check_map(t_game *game)
 /*
 void	check_path(t_game *game)
 {
-	int	i;
-
-	i = 0;
 	if (game->str_line[i] == 'P')
-		d
 }
 */
 

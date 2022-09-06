@@ -48,20 +48,6 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 
-typedef struct s_moves
-{
-	void	*num_0;
-	void	*num_1;
-	void	*num_2;
-	void	*num_3;
-	void	*num_4;
-	void	*num_5;
-	void	*num_6;
-	void	*num_7;
-	void	*num_8;
-	void	*num_9;
-}	t_moves;
-
 typedef struct s_game
 {
 	int		height;
@@ -77,7 +63,7 @@ typedef struct s_game
 	void	*mlx_win;
 	void	*background;
 	void	*coin[12];
-	void    *pcoin;
+	void	*pcoin;
 	void	*pato[4];
 	void	*ppato;
 	void	*safe;
@@ -86,9 +72,9 @@ typedef struct s_game
 }	t_game;
 
 //ANIMATIONS
-void    player_sprite(int   keycode, t_game *game);
-void    coin_animation(t_game *game);
-void    coin_animation1(t_game *game);
+void	player_sprite(int keycode, t_game *game);
+void	coin_animation(t_game *game);
+void	coin_animation1(t_game *game);
 
 //CHECK MAP WALLS
 void	check_map_walls(t_game *game);
@@ -99,9 +85,9 @@ void	check(t_game *game);
 
 //INIT IMAGES
 void	init_img(t_game *game);
-void    init_coin(t_game *game);
+void	init_coin(t_game *game);
 void	init_coin1(t_game *game);
-void    init_vars(t_game *game);
+void	init_vars(t_game *game);
 
 //CREATE MAP
 void	read_map(char *file, t_game *game);

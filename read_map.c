@@ -53,3 +53,7 @@ void	read_map(char *file, t_game *game)
 	}
 	close (fd);
 }
+/*
+	if (line == NULL || line[0] == '\0')
+		ft_error("Empty Map!\n");
+*/

@@ -82,6 +82,7 @@ void	init_vars(t_game *game)
 {
 	game->ppato = game->pato[3];
 	game->pcoin = game->coin[0];
+	game->time_coin = 0;
 	game->counter = 0;
 	game->col_count = 0;
 }
