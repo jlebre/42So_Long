@@ -47,24 +47,36 @@ Its purpose is to make you work with textures, sprites, and some other very basi
 
 ## 🕹 How to Use
 
-### 1️⃣ Clone the Repository
+### 1️⃣ Install [MLX](https://github.com/42Paris/minilibx-linux):  
+```bash
+sudo apt-get install gcc make xorg libxext-dev libbsd-dev
+git clone https://github.com/42Paris/minilibx-linux.git && cd minilibx-linux && ( [ -f ./configure ] && ./configure || true ) && make && sudo cp libmlx.a /usr/local/lib/ && [ -f libmlx_$(uname -m).a ] && sudo cp libmlx_$(uname -m).a /usr/local/lib/ || true && sudo cp mlx.h /usr/local/include/ && sudo mkdir -p /usr/local/man/man3 && sudo cp man/man3/mlx*.1 /usr/local/man/man3
+```
+
+
+### 2️⃣ Clone the Repository
 ```bash
 git clone https://github.com/jlebre/42So_Long.git
 cd 42So_Long
 ```
 
-### 2️⃣ Compile the Game
+### 3️⃣ Compile the Game
 ```bash
 make
 ```
 
-### 3️⃣ Run the Game
+### 4️⃣ Run the Game
 ```bash
 ./so_long maps/sample_map.ber
 ```
 Replace `sample_map.ber` with your own map file.
 
-### 4️⃣ Controls
+Try it:
+```bash
+./so_long maps/maps_that_work/medium.ber
+```
+
+### Controls
 - `W` - Move up
 - `A` - Move left
 - `S` - Move down
