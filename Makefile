@@ -17,8 +17,13 @@ MLXFLAGS_LINUX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 #-fsanitize=address
 RM = @rm -fr
 NAME = so_long
-SRCS = so_long.c colors.c read_map.c moves.c animations.c init_images.c\
+FILE = so_long.c colors.c read_map.c moves.c animations.c init_images.c\
 	print_map.c check.c key.c utils.c image_to_window.c render.c check_path.c
+
+SRCS_DIR = srcs
+
+SRCS = $(addprefix $(SRCS_DIR)/, $(FILE))
+
 OBJS = $(SRCS:.c=.o)
 
 HEADER = so_long.h libft/libft.h
