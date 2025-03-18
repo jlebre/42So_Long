@@ -18,27 +18,27 @@ Its purpose is to make you work with textures, sprites, and some other very basi
 
 🔹 To see the `Makefile`, [click here](https://github.com/jlebre/42So_Long/blob/main/Makefile)!
 
-🔹 [Main Function](https://github.com/jlebre/42So_Long/blob/main/so_long.c)
+🔹 [Main Function](https://github.com/jlebre/42So_Long/blob/main/srcs/so_long.c)
 
-🔹 [Map Reader](https://github.com/jlebre/42So_Long/blob/main/read_map.c)
+🔹 [Map Reader](https://github.com/jlebre/42So_Long/blob/main/srcs/read_map.c)
 
-🔹 [Map Printer](https://github.com/jlebre/42So_Long/blob/main/print_map.c)
+🔹 [Map Printer](https://github.com/jlebre/42So_Long/blob/main/srcs/print_map.c)
 
-🔹 [Renderer](https://github.com/jlebre/42So_Long/blob/main/render.c)
+🔹 [Renderer](https://github.com/jlebre/42So_Long/blob/main/srcs/render.c)
 
-🔹 [Image Initializer](https://github.com/jlebre/42So_Long/blob/main/init_images.c)
+🔹 [Image Initializer](https://github.com/jlebre/42So_Long/blob/main/srcs/init_images.c)
 
-🔹 [Image to Window](https://github.com/jlebre/42So_Long/blob/main/image_to_window.c)
+🔹 [Image to Window](https://github.com/jlebre/42So_Long/blob/main/srcs/image_to_window.c)
 
-🔹 [Key Handler](https://github.com/jlebre/42So_Long/blob/main/key.c)
+🔹 [Key Handler](https://github.com/jlebre/42So_Long/blob/main/srcs/key.c)
 
-🔹 [Movement Handler](https://github.com/jlebre/42So_Long/blob/main/moves.c)
+🔹 [Movement Handler](https://github.com/jlebre/42So_Long/blob/main/srcs/moves.c)
 
-🔹 [Animations](https://github.com/jlebre/42So_Long/blob/main/animations.c)
+🔹 [Animations](https://github.com/jlebre/42So_Long/blob/main/srcs/animations.c)
 
-🔹 [Map Validator](https://github.com/jlebre/42So_Long/blob/main/check.c)
+🔹 [Map Validator](https://github.com/jlebre/42So_Long/blob/main/srcs/check.c)
 
-🔹 [Path Checker](https://github.com/jlebre/42So_Long/blob/main/check_path.c)
+🔹 [Path Checker](https://github.com/jlebre/42So_Long/blob/main/srcs/check_path.c)
 
 
 ---
