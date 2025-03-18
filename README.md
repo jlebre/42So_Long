@@ -10,7 +10,7 @@ This project is a very small 2D game.
 
 Its purpose is to make you work with textures, sprites, and some other very basic gameplay elements.
 
-📜 To see the project subject, [click here](https://github.com/jlebre/libft/blob/main/so_long.pdf)!
+📜 To see the project subject, [click here](https://github.com/jlebre/42So_Long/blob/main/so_long.pdf)!
 
 ---
 
